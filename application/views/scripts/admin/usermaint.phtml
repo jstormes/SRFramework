@@ -1,0 +1,47 @@
+<div>
+<form  enctype="application/x-www-form-urlencoded" action="" method="post" >
+<table>
+<tr>
+<td>Email Address:</td><td><?php echo $this->formText("user_nm",$this->user->user_nm); ?></td>
+</tr>
+<tr>
+<td>Name:</td><td><?php echo $this->formText("user_full_nm",$this->user->user_full_nm); ?></td>
+</tr>
+<tr>
+<td>Initials:</td><td><?php echo $this->formText("user_abbr",$this->user->user_abbr); ?></td>
+</tr>
+<tr>
+<td>Company:</td><td><?php echo $this->formText("user_company",$this->user->user_company); ?></td>
+</tr>
+<tr>
+<td>Phone1:</td><td><?php echo $this->formText("user_phone1",$this->user->user_phone1); ?></td>
+</tr>
+<tr>
+<td>Phone2:</td><td><?php echo $this->formText("user_phone2",$this->user->user_phone2); ?></td>
+</tr>
+<tr>
+<td>Last Login:</td><td><?php echo $this->formText("last_login",$this->user->last_login); ?></td>
+</tr>
+<tr>
+<td colspan='2'><?php echo $this->formSubmit("cancel","Cancel"); ?> <?php echo $this->formSubmit("udpate_user","Update User"); ?> </td>
+</tr>
+</table>
+</form>
+</div>
+
+<div>
+<form  enctype="application/x-www-form-urlencoded" action="" method="post" >
+<table>
+<tbody>
+    <?php foreach($this->applications as $Row) {?>
+      <tr><?php $href=$this->url(array('controller'=>'admin','action'=>'usermaint','user_id'=>$Row['application_id']), null, TRUE); ?>
+        <td nowrap="nowrap"><a href="<?php echo $href ?>"><?php echo trim($Row['application_nm']); ?></a></td>
+        <td ><div style="width:100%;"><a href="<?php echo $href ?>"><?php echo nl2br(trim($Row['application_nm'])); ?></a></div></td>
+        <td nowrap="nowrap"><a href="<?php echo $href ?>">Delete</a></td>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
+<?php echo $this->formSelect("applications","Cancel"); ?>
+</form>
+</div>

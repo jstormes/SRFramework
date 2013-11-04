@@ -1,0 +1,35 @@
+<form  enctype="application/x-www-form-urlencoded" action="" method="post" class="form form-horizontal col-md-6 col-md-offset-2" >
+
+    <?php if ($this->message!='') {?>
+    <div class="alert alert-danger">
+    	<?php echo $this->message; ?>
+    </div>
+    <?php } ?>
+    <?php if (!$this->have_pad) { ?>
+		<div class="form-group">
+	        <label for="email" class="col-lg-4 control-label">Current Password</label>
+	        <div class="col-lg-8">
+	            <input type="password" class="form-control" name="old_passwd" id="inputold_passwd" placeholder="Current Password" autofocus="autofocus">
+	        </div>
+	    </div>
+	<?php } ?>
+	<div class="form-group">
+        <label for="email" class="col-lg-4 control-label">New Password</label>
+        <div class="col-lg-8">
+            <input type="password" class="form-control" name="new_passwd" id="inputnew_passwd" placeholder="New Password" autofocus="autofocus">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Verify Password</label>
+        <div class="col-lg-8">
+            <input type="password" class="form-control" name="ver_passwd" id="inputver_passwd" placeholder="Verify New Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-4 col-lg-8">
+        	<?php echo $this->formSubmit("reset","Reset Password", array('class' => 'btn btn-success')); ?>
+        	<?php echo $this->formSubmit("cancel","Cancel", array('class' => 'btn btn-default pull-right')); ?>
+        </div>
+    </div>
+</form>

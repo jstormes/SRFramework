@@ -1,0 +1,100 @@
+<?php /* Quick function to waatermark the header, driven by the watermark=1 in the *.ini and set by _initBuildLayout() in Bootstrap.php */
+function watermark($wm) { if ($wm) return "style=\"background-image: url('$wm'); background-repeat: repeat-x; background-size: auto 100%;\""; }?>
+
+<!-- Fixed navbar -->
+<div class="hidden-xs hidden-sm col-md-12" <?php echo watermark($this->watermark); ?>>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="pull-left">
+                <img style="padding: 4px;" class="logo" src="/images/logo.png" />
+            </div>
+        </div>
+        <div class="col-md-6 ">
+        <div class="row">
+            <div class="col-md-12 text-center"> &nbsp;
+            </div>
+        </div>
+            <div class="row">
+            <div class="col-md-12 text-center">
+                <p class='title'>
+                    <b><?php echo $this->app_name; ?></b>
+                </p>
+            </div>
+            <div class="row">
+            <div class="col-md-12 text-center">
+                <p class='title'>
+                    <b><?php echo $this->title; ?></b>
+                </p>
+            </div>
+            </div>
+            
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="row">
+                <div class="col-md-12 nowrap  text-right">
+                    <a href="<?php echo $this->ProfileURL; ?>"><?php echo $this->user['user_nm']; ?></a> &nbsp; 
+                    <b><a href="<?php echo $this->LogInOutURL; ?>"><?php echo ($this->user ? 'Sign Out' : 'Sign In'); ?></a></b> &nbsp; &nbsp; 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">&nbsp;</div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-12 text-right">
+                    <?php if ($this->user) { ?>
+                    <form method="post" class="col-md-6 pull-right">
+                        <?php echo $this->formHidden("ClientSelectForm","1"); ?>
+                        <?php // See _initNavigation() in the Bootstrap.php file.  
+                            if (count($this->header_customers)==1) // if we only have one customer don't display drop down.
+                                echo $this->header_current_customer;
+                            else
+                                echo $this->formSelect("ClientSelector",$this->header_current_customer,array("class"=>"noPrint form-control","onchange"=>"this.form.submit()"),$this->header_customers); 
+                         ?> 
+                    </form>
+                    <?php } ?>
+                </div>
+                <div class="col-md-1">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header" <?php echo watermark($this->watermark); ?>>
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-collapse">
+            <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"
+            ><b><?php echo $this->title; ?></b></a>
+    </div>
+    <div class="navbar-collapse collapse">
+
+        <!-- Left Nav -->
+    <?php echo $this->navigation()->menu()->setUlClass('nav navbar-nav'); ?>
+
+
+    <!-- Right Nav -->
+    <?php
+    if(isset($this->appMenu)) {
+        // appmenu.phtml is partial for our app menu
+        echo $this->partial ( 'partials/appmenu.phtml', array (
+                'menu'        => $this->appMenu,
+                'ProfileURL'  => $this->ProfileURL,
+                'LogInOutURL' => $this->LogInOutURL
+
+        ) );
+    }
+    ?>
+        
+    </div>
+    <!--/.nav-collapse -->
+</div>
+
+
+<!-- Fixed navbar -->

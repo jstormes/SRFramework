@@ -1,0 +1,57 @@
+<form  enctype="application/x-www-form-urlencoded" action="" method="post" class="form form-horizontal col-md-6 col-md-offset-2">
+
+    <?php if ($this->message!='') {?>
+    <div class="alert alert-danger">
+    <?php echo $this->message; ?>
+    </div>
+    <?php } ?>
+
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Your Name</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" name="name" id="inputname" placeholder="Your name" autofocus="autofocus">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Your Email Address</label>
+        <div class="col-lg-8">
+            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Your Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Your Phone Number</label>
+        <div class="col-lg-8">
+            <input type="tel" class="form-control" name="phone" id="inputPhone" placeholder="Phone Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Your Manager's Name</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" name="mgr_name" id="inputMgr" placeholder="Manager's Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Your Manager's Email Address</label>
+        <div class="col-lg-8">
+            <input type="email" class="form-control" name="mgr_email" id="inputMgrEmail" placeholder="Manager's Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Your Manager's Phone Number</label>
+        <div class="col-lg-8">
+            <input type="tel" class="form-control" name="mgr_phone" id="inputMgrPhone" placeholder="Manager's Phone Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-lg-4 control-label">Special Instructions</label>
+        <div class="col-lg-8">
+            <textarea name="instructions" id="inputInstructions" rows="3" class="form-control"></textarea>
+        </div>
+    </div>
+	<div class="form-group">
+        <div class="col-lg-offset-4 col-lg-8">
+            <?php echo $this->formSubmit("request_access","Request Access", array('class' => 'btn btn-success')); ?> 
+			<?php echo $this->formSubmit("cancel","Cancel", array('class' => 'btn btn-default pull-right')); ?>
+        </div>
+    </div>
+</form>
