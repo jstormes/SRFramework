@@ -7,3 +7,6 @@
 [submodule "public/datatables"]
 	path = public/datatables
 	url = git@github.com:DataTables/DataTables.git
+[submodule "library/ExcelMgr"]
+	path = library/ExcelMgr
+	url = git@github.com:jstormes/ExcelMgr.git
