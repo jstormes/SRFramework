@@ -553,7 +553,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             // Bind our menu into the view
             $this->menu = new Zend_Navigation($this->config->menu);
             
-            $this->view->registerHelper(new PhpSlickGrid_View_Helper_Menu(), 'menu');
+            $this->view->registerHelper(new Bootstrap_View_Helper_Menu(), 'menu');
             
             //Zend_Registry::set('navigation', $this->menu);
             //Zend_Registry::set('Zend_Navigation', $this->menu);
