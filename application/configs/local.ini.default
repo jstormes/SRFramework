@@ -6,8 +6,50 @@
 
 [production]
 
+admin_email  = dummy@stormes.net
+admin_name   = System Admin
+admin_number = "(555) 555-5555"
+
+copyright_company = Generic Company
+copyright_link    = http://www.yahoo.com
+
+application_id = 1
+version        = 1.00.00
+
+resources.mail.transport.type = Zend_Mail_Transport_Smtp
+resources.mail.transport.host = 127.0.0.1
+resources.mail.transport.port = 25
+
+resources.db.params.host     = 
+resources.db.params.username = 
+resources.db.params.password = 
+resources.db.params.dbname   = 
+
+resources.multidb.shared.host     = 
+resources.multidb.shared.username = 
+resources.multidb.shared.password = 
+resources.multidb.shared.dbname   = 
+
 [staging : production]
+
+resources.db.params.dbname      = 
+
+resources.multidb.shared.dbname = 
 
 [testing : production]
 
+resources.db.params.dbname      = 
+
+resources.multidb.shared.dbname = 
+
 [development : production]
+
+resources.mail.transport.host     = "smtp.gmail.com"
+resources.mail.transport.port     = 587
+resources.mail.transport.auth     = "login"
+resources.mail.transport.username = 
+resources.mail.transport.password = 
+resources.mail.transport.ssl      = "tls"
+
+resources.db.params.dbname      = 
+resources.multidb.shared.dbname = 
