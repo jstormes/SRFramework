@@ -4,3 +4,6 @@
 [submodule "public/multiselect"]
 	path = public/multiselect
 	url = git@github.com:davidstutz/bootstrap-multiselect.git
+[submodule "public/datatables"]
+	path = public/datatables
+	url = git@github.com:DataTables/DataTables.git
