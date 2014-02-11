@@ -3,10 +3,12 @@
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {   
     // Our Standard Registry objects (Candidates for Zend Cache)
+    // These are used as resources for the rest of our framework.
+    // These will be stored into the registry for later use.
     protected $config           = null; // $this->config->(Option) = application.ini config option
     protected $db               = null; // Application DB
     protected $log              = null; // Logging object
-    protected $application              = null; // Application specific configuration from shared db.
+    protected $application      = null; // Application specific configuration from shared db.
     protected $user             = null; // The user row from the user table in the shared db.
 
     // local only properties

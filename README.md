@@ -18,8 +18,8 @@ Provides:
 * Font Awesome integration 
 * CKEditor integration
 
-Key Concepts:
--------------
+Supports these key concepts:
+----------------------------
 
 Application - A webpage designed to let people accomplish some business related function/task/job. 
 
