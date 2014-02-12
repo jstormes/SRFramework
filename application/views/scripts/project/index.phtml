@@ -1,3 +1,44 @@
-<div id='phpslickgrid' style="overflow: auto; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; width: 100%;">
-	<?php echo $this->PHPSlickgrid($this->gridName,null,$this->GridColumnConfiguration,$this->GridConfiguration); ?>
-</div>
+<?php echo $this->PHPSlickGrid($this->table); ?>
+
+<script>
+//console.log(testColumns);
+
+var columns = test.getColumns();
+//for (var key in col){
+	//console.log(col[key]);
+	//col[key].width =10;
+	//testColumns[key].width=100-9;
+	//console.log(test);
+	//test.setColumns({"width":100})
+//	grid.updateColumnHeader(key,'','');
+//}
+//test.setColumns(col);
+
+
+
+var $headers = $(".slick-header-columns");
+
+function applyColumnHeaderWidths() {
+//    if (!initialized) { return; }
+    var h;
+    for (var i = 0, headers = $headers.children(), ii = headers.length; i < ii; i++) {
+      h = $(headers[i]);
+      h.width(columns[i].width -9);
+      //console.log(h.width());
+      
+//       if (h.width() !== columns[i].width ) {
+//         h.width(columns[i].width -9);
+//         console.log(h.width());
+//       }
+    }
+
+   // updateColumnCaches();
+  }
+
+//applyColumnHeaderWidths();
+
+test.onColumnsReordered.subscribe(function (e, args) {
+	//applyColumnHeaderWidths();
+});
+  
+</script>

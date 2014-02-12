@@ -18,21 +18,20 @@
 
 /* Default Computer Screen ( Mouse Driven )*/
 .navbar {
-	position: absolute;
-	bottom: 0;
+	/*position: absolute;*/
+	/*bottom: 0;*/
 	width: 100%;
-	min-height: 22px;
-	height: 22px;
+	/*min-height: 22px;*/
+	/*height: 22px;*/
 	margin-bottom: 0px;
 	margin-top: 0px;
 	border-color: rgb(231, 231, 231);
 	border-top: 1px solid rgb(231, 231, 231);
-	
 }
 
 .navbar-nav>li>a {
-	padding-top: 0px !important;
-	padding-bottom: 0px !important;
+	/*padding-top: 0px !important;*/
+	/*padding-bottom: 0px !important;*/
 }
 
 .navbar-collapse {
@@ -50,7 +49,7 @@
 		border-bottom: 1px solid black;
 	}
 	.navbar {
-		position: static;
+		/*position: static;*/
 		bottom: 0;
 		width: 100%;
 		min-height: 50px;
@@ -58,11 +57,11 @@
 		border: 1px solid transparent;
 	}
 	.navbar-nav>ul {
-		/*z-index: 1000;*/
+		z-index: 1000;
 		background: #ffffff;
 	}
 	.navbar-nav>li {
-		/*z-index: 1000;*/
+		z-index: 1000;
 		/*background: #ffffff;*/
 		/* this fixes transparent menu in small format but messes up med format*/
 	}
@@ -73,7 +72,6 @@
 	.navbar-collapse {
 		border-top: 1px solid transparent;
 		max-height: 340px;
-		background-color: white;
 	}
 	.navbar-brand {
 		display: block;

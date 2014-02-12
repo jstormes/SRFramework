@@ -402,23 +402,34 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         // * Bootstrap front-end framwork 
         // * http://getbootstrap.com/
         // *******************************************************
-        $this->view->headLink()->appendStylesheet('/bootstrap/dist/css/bootstrap.min.css','screen, print');
-        $this->view->headScript()->appendFile('/js/jquery-1.9.1.min.js');
+        
+        
+        // jQuery
+        $this->view->headScript()->appendFile('/js/jquery-1.11.0.min.js');
+        $this->view->headScript()->appendFile('/js/jquery-ui.min.js');
+        $this->view->headLink()->appendStylesheet('/css/jquery-ui.css','screen');
+        
+        // AJAX JSON RPC
+        $this->view->headScript()->appendFile('/js/json2.js');
+        $this->view->headScript()->appendFile('/js/jquery.zend.jsonrpc.js');
+        
+        // Twitter Bootstrap
         $this->view->headScript()->appendFile('/bootstrap/dist/js/bootstrap.min.js');
+        $this->view->headLink()->appendStylesheet('/bootstrap/dist/css/bootstrap.min.css','screen, print');
 
         $this->view->headScript()->appendFile('/multiselect/js/bootstrap-multiselect.js');
-
         $this->view->headScript()->appendFile('/multiselect/js/prettify.js');
+        $this->view->headLink()->appendStylesheet('/multiselect/css/bootstrap-multiselect.css','screen');
+        
 
-        $this->view->headScript()->appendFile('/js/jquery-ui-1.10.3.custom.min.js');
+        
         
         // Poplate the base css files
         $this->view->headLink()->appendStylesheet('/css/layout/body.css','screen');    // Bind screen CSS for our layout
         $this->view->headLink()->appendStylesheet('/css/layout/body-print.css','print'); // Bind print CSS for our layout
         $this->view->headLink()->appendStylesheet('/css/layout/header.css','screen');    // Bind screen CSS for our header
-        $this->view->headLink()->appendStylesheet('/css/css3pie.css','screen');    // Bind screen CSS for our header
-        $this->view->headLink()->appendStylesheet('/multiselect/css/bootstrap-multiselect.css','screen');    // Bind screen CSS for our header
-        $this->view->headLink()->appendStylesheet('/css/ui-lightness/jquery-ui-1.10.3.custom.min.css','screen');    // Bind screen CSS for our header
+//        $this->view->headLink()->appendStylesheet('/css/css3pie.css','screen');    // Bind screen CSS for our header
+        
 
         // User info to the view
         $this->view->user = $this->user;
