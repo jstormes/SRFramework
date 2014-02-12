@@ -10,3 +10,6 @@
 [submodule "library/ExcelMgr"]
 	path = library/ExcelMgr
 	url = git@github.com:jstormes/ExcelMgr.git
+[submodule "library/PHPSlickGrid"]
+	path = library/PHPSlickGrid
+	url = https://jstormes@github.com/jstormes/phpslickgrid.git
