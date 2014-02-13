@@ -13,3 +13,6 @@
 [submodule "public/slickgrid"]
 	path = public/slickgrid
 	url = https://jstormes@github.com/jstormes/SlickGrid.git
+[submodule "library/PHPSlickGrid"]
+	path = library/PHPSlickGrid
+	url = https://jstormes@github.com/jstormes/phpslickgrid.git
