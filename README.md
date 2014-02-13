@@ -1,6 +1,5 @@
 # Welcome to SRFramework
 
-
 ## The Shared Reality Framework provides a "boilerplate" framework to speed intranet application development
 
 Provides:
