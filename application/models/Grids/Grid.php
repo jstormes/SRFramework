@@ -8,7 +8,7 @@ class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 	protected $_friendlyName = 'Grid';
 	
 	protected function _gridInit() {
-		$this->_gridName="test";
+		//$this->_gridName="cow";
 	
 	}
 }

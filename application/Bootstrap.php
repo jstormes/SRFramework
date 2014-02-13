@@ -224,8 +224,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         else
             $this->AuthServer = $_SERVER["HTTP_HOST"];
         
-        $this->LogInOutURL = "//".$this->AuthServer."/login";
-        $this->ProfileURL  = "//".$this->AuthServer."/login/reset"; // for now we just reset password.
+        $this->LogInOutURL = $this->AuthServer."/login";
+        $this->ProfileURL  = $this->AuthServer."/login/reset"; // for now we just reset password.
     }
 
     protected function _initProjectId(){
@@ -361,7 +361,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $current_url=urlencode($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]);
         
         // We were not authenticated and not on a login url so redirect to our login server.
-        header( "Location: ".$this->LogInOutURL."?ret=".$current_url);
+        header( "Location: http:".$this->LogInOutURL."?ret=".$current_url);
         exit();
     }
     
@@ -406,7 +406,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         
         // jQuery
         $this->view->headScript()->appendFile('/js/jquery-1.11.0.min.js');
-        $this->view->headScript()->appendFile('/js/jquery-ui.min.js');
+        $this->view->headScript()->appendFile('/js/jquery-ui-1.10.3.custom.min.js');
         $this->view->headLink()->appendStylesheet('/css/jquery-ui.css','screen');
         
         // AJAX JSON RPC
@@ -451,7 +451,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         //  $this->view->watermark="style=\"background-image:url('/images/layout/".APPLICATION_ENV.".png');background-repeat:repeat-x;background-size:\"";
     
         // Links for the user toolbar.
-        $this->log->debug($this->ProfileURL);
         $this->view->LogInOutURL=$this->LogInOutURL;
         $this->view->ProfileURL=$this->ProfileURL;
         
