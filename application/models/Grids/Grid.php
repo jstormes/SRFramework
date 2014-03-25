@@ -7,17 +7,37 @@ class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 
 	protected $_friendlyName = 'Grid';
 	
+	/**
+	 * Current Project Id
+	 * 
+	 * @var integer
+	 */
+	public $project_id=null;
+	
 	protected function _gridInit() {
-		//$this->_gridName="cow";
+
 		$this->project_id = Zend_Registry::get('project_id');
+		
 	}
 	
 	public function updateItem($updt_dtm, $row, $options=null) {
 		
-		Zend_Registry::get('log')->debug($row);
-		
 		$row['project_id']=$this->project_id;
 			
 		parent::updateItem($updt_dtm, $row);
+	}
+	
+	public function addItem($row,$options=null) {
+		
+		$row['project_id']=$this->project_id;
+		
+		parent::addItem($row, $options);
+	}
+	
+	public function addConditionsToSelect(Zend_Db_Select $select) {
+	
+		$select->where('project_id = ?',$this->project_id);
+		
+		return $select;
 	}
 }

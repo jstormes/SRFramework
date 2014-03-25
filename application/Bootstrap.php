@@ -231,12 +231,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     protected function _initProjectId(){
                    
         $uri = explode("/",$_SERVER["REQUEST_URI"]);
+        
         $this->project_id=0;
         if (in_array('project_id',$uri)) {
             // We have a project_id so check that the project belongs to the customer.
             $index = array_search('project_id',$uri);
             $index++;
             $project_id=$uri[$index];
+            $p = explode("?",$uri[$index]);  // Trim any "GET" parameters
+            $project_id=$p[0];
             //print_r($project_id);
             
             $this->project_id=$project_id;
