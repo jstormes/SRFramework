@@ -40,4 +40,16 @@ class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 		
 		return $select;
 	}
+	
+	// Add data to the PollReply so that 
+	// onPollReply.subscribe() can get it.
+	private function PollReply($data) {
+		return $data;
+	}
+	
+
+	// get data from the PollReqest.
+	private function PollRequest($data) {
+		return $data;
+	}
 }
