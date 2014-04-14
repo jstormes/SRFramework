@@ -20,18 +20,18 @@ class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 		
 	}
 	
-	public function updateItem($updt_dtm, $row, $options=null) {
+	public function _updateItem($row, $state=null) {
 		
 		$row['project_id']=$this->project_id;
 			
-		parent::updateItem($updt_dtm, $row);
+		return $row;
 	}
 	
-	public function addItem($row,$options=null) {
+	public function _addItem($row,$options=null) {
 		
 		$row['project_id']=$this->project_id;
 		
-		parent::addItem($row, $options);
+		return $row;
 	}
 	
 	public function addConditionsToSelect(Zend_Db_Select $select) {
@@ -51,5 +51,16 @@ class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 	// get data from the PollReqest.
 	private function PollRequest($data) {
 		return $data;
+	}
+	
+	/**
+	 * 
+	 *
+	 * By: jstormes Apr 8, 2014
+	 *
+	 * @param string $stuff
+	 */
+	public function ThisIsANewFunction($stuff) {
+		
 	}
 }
