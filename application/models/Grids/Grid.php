@@ -2,8 +2,11 @@
 class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 {
 
+	/* Required setting for the SlickGrid */
 	protected $_name = 'grid';
 	protected $_primary = 'grid_id';
+	protected $_upd_dtm_col = 'updt_dtm';
+	protected $_deleted_col = 'deleted';
 
 	protected $_friendlyName = 'Grid';
 	
