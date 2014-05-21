@@ -25,6 +25,7 @@ class ProjectController extends Zend_Controller_Action
 		// Add PHPSlickGrid assets
 		$this->view->headScript()->appendFile('/phpslickgrid/js/json/datacache.js');
 		$this->view->headLink()->appendStylesheet('/phpslickgrid/css/fix_for_bootstrap.css','screen, print');
+		$this->view->headLink()->appendStylesheet('/phpslickgrid/css/phpslickgrid.css','screen, print');
 		$this->view->headScript()->appendFile('/phpslickgrid/js/editors/mysql.js');
 		
 		// setup the view
