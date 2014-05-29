@@ -1,26 +1,9 @@
 <style>
-    .load-medium {
-      color: orange;
-      font-weight: bold;
-    }
-
-    .load-hi {
-      color: red;
-      font-weight: bold;
-    }
-
-    .changed {
-      background: pink;
-    }
-
-    .current-server {
-      border: 1px solid black;
-      background: orange;
-    }
-    
-    .highlight{ background: yellow } 
-    
-  </style>
+/* Active row highlight color */
+.slick-row.active .slick-cell {
+     background-color: #FFB;
+}
+</style>
 <?php echo $this->PHPSlickGrid($this->grid); ?>
 
 <?php //echo $this->FollowChanges($this->grid); ?>

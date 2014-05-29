@@ -16,6 +16,8 @@ class ProjectController extends Zend_Controller_Action
 		$this->view->headScript()->appendFile('/js/jquery.event.drag-2.2.js');
 		$this->view->headScript()->appendFile('/js/jquery.event.drop-2.2.js');
 		
+		// Add store to manage local storage
+		$this->view->headScript()->appendFile('/js/store.min.js');
 		
 		// Add SlickGrid assets
 		$this->view->headScript()->appendFile('/slickgrid/slick.core.js');

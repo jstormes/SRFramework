@@ -20,6 +20,7 @@ class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 	protected function _gridInit() {
 
 		$this->project_id = Zend_Registry::get('project_id');
+		//$this->_gridState['localStorage']['activeRow']['row']=33;
 		
 	}
 	
