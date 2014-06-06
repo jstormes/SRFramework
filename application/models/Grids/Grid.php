@@ -22,6 +22,8 @@ class Application_Model_Grids_Grid extends PHPSlickGrid_Db_Table
 		$this->project_id = Zend_Registry::get('project_id');
 		//$this->_gridState['localStorage']['activeRow']['row']=33;
 		
+		$this->Hidden=array('project_id');
+		
 	}
 	
 	public function _updateItem($row, $state=null) {
